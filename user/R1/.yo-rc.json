@@ -1,0 +1,620 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "put",
+        "post",
+        "patch",
+        "delete"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": true,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "resourceFirst",
+        "contentTypeOrder": "applicationFirst",
+        "customHeaderName": "version"
+      },
+      "apiData": {
+        "returnDataType": "No"
+      },
+      "records": {
+        "limit": 10
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": true
+      },
+      "filter": {
+        "FilterEnable": false
+      },
+      "unitTesting": {
+        "UnitTestingEnable": true,
+        "testingTypes": [
+          "unitTesting",
+          "pactTesting"
+        ]
+      },
+      "security": {
+        "enabled": false,
+        "type": "none"
+      },
+      "logging": {
+        "enabled": false
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "nodejs",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "democustomer0605",
+        "appMemory": "256M",
+        "revisionName": "R1"
+      },
+      "docker": {
+        "cwd": "TempSystem/cedrus01062018062733/DemoProject/user/R1",
+        "publicIP": "localhost",
+        "revisionName": "R1"
+      },
+      "javaOptions": {
+        "basePackage": "io.cedrus.apigen",
+        "packagingType": "jar",
+        "framework": [
+          "jaxrs",
+          "jaxrs"
+        ],
+        "springBootDeployment": "tomcat"
+      }
+    },
+    "multipleResources": {
+      "enabled": true,
+      "resources": [
+        {
+          "resourceName": "user",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"userid\":{\"type\":\"integer\",\"format\":\"int32\"},\"userName\":{\"type\":\"string\",\"format\":\"\"},\"firstName\":{\"type\":\"string\",\"format\":\"\"},\"lastName\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"userid\",\"userName\",\"firstName\",\"lastName\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "patch",
+            "delete"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": true,
+          "apiFakerMappingFileLocation": {
+            "type": "object",
+            "properties": {
+              "userid": {
+                "type": "integer",
+                "faker": "random.number"
+              },
+              "userName": {
+                "type": "string",
+                "faker": "internet.email"
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string",
+                "faker": "name.lastName"
+              }
+            },
+            "required": [
+              "userid",
+              "userName",
+              "firstName",
+              "lastName"
+            ]
+          },
+          "apiFakerMappingJsonType": "Data Schema",
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null,
+          "queryParameters": {
+            "get": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              },
+              {
+                "name": "username",
+                "in": "query",
+                "description": "",
+                "required": false,
+                "isArray": false,
+                "type": "string",
+                "format": ""
+              }
+            ],
+            "put": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "post": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "patch": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "delete": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ]
+          },
+          "uniqueParameter": "userid",
+          "fake_data": [
+            {
+              "userid": 86921,
+              "userName": "Laron47@hotmail.com",
+              "firstName": "in",
+              "lastName": "Armstrong"
+            },
+            {
+              "userid": 80684,
+              "userName": "Kade_Wehner79@hotmail.com",
+              "firstName": "tempor",
+              "lastName": "Watsica"
+            },
+            {
+              "userid": 80825,
+              "userName": "Adaline_Spencer81@yahoo.com",
+              "firstName": "ad amet",
+              "lastName": "Dickinson"
+            },
+            {
+              "userid": 94519,
+              "userName": "Elton90@yahoo.com",
+              "firstName": "veniam",
+              "lastName": "Morar"
+            },
+            {
+              "userid": 66773,
+              "userName": "Ivory_Feest@gmail.com",
+              "firstName": "non ad",
+              "lastName": "Morissette"
+            },
+            {
+              "userid": 58160,
+              "userName": "Bell55@hotmail.com",
+              "firstName": "labore veniam Duis aliquip",
+              "lastName": "Abshire"
+            },
+            {
+              "userid": 32656,
+              "userName": "Richie_Pacocha@yahoo.com",
+              "firstName": "veniam",
+              "lastName": "Klein"
+            },
+            {
+              "userid": 19839,
+              "userName": "Lilly_Nicolas14@hotmail.com",
+              "firstName": "minim in adipisicing est",
+              "lastName": "Stoltenberg"
+            },
+            {
+              "userid": 1391,
+              "userName": "Domenick.Jacobson@hotmail.com",
+              "firstName": "nostrud ad enim ut",
+              "lastName": "Wisoky"
+            },
+            {
+              "userid": 689,
+              "userName": "Noel71@gmail.com",
+              "firstName": "eiusmod",
+              "lastName": "Mueller"
+            },
+            {
+              "userid": 83960,
+              "userName": "Albertha.Yundt@hotmail.com",
+              "firstName": "voluptate",
+              "lastName": "King"
+            },
+            {
+              "userid": 89439,
+              "userName": "Don67@yahoo.com",
+              "firstName": "est Duis irure reprehenderit",
+              "lastName": "Trantow"
+            },
+            {
+              "userid": 74830,
+              "userName": "Giuseppe.Aufderhar66@gmail.com",
+              "firstName": "ipsum voluptate et",
+              "lastName": "Purdy"
+            },
+            {
+              "userid": 85705,
+              "userName": "Valentin_Treutel1@hotmail.com",
+              "firstName": "elit",
+              "lastName": "Schmidt"
+            },
+            {
+              "userid": 4579,
+              "userName": "Tamia_Boehm@gmail.com",
+              "firstName": "id",
+              "lastName": "Rowe"
+            },
+            {
+              "userid": 14544,
+              "userName": "Everardo27@gmail.com",
+              "firstName": "ad",
+              "lastName": "Hirthe"
+            },
+            {
+              "userid": 15791,
+              "userName": "Isobel99@yahoo.com",
+              "firstName": "sunt aute in eiusmod",
+              "lastName": "Hammes"
+            },
+            {
+              "userid": 73128,
+              "userName": "Pattie.Borer26@hotmail.com",
+              "firstName": "proident nulla",
+              "lastName": "Schulist"
+            },
+            {
+              "userid": 24339,
+              "userName": "Rebekah56@yahoo.com",
+              "firstName": "amet aliqua laboris s",
+              "lastName": "Yost"
+            },
+            {
+              "userid": 28018,
+              "userName": "Burdette_Bruen9@yahoo.com",
+              "firstName": "minim commodo qui",
+              "lastName": "Franecki"
+            }
+          ]
+        }
+      ]
+    },
+    "caller_type": "ui",
+    "javaOptions": {
+      "basePackage": "io.cedrus.apigen",
+      "packagingType": "jar",
+      "framework": [
+        "jaxrs",
+        "jaxrs"
+      ],
+      "springBootDeployment": "tomcat"
+    },
+    "apiOverview": {
+      "apiName": "user",
+      "apiBasePath": "/api",
+      "apiDescription": "This is sample API being generated by cedrus-api generator"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "user",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"userid\":{\"type\":\"integer\",\"format\":\"int32\"},\"userName\":{\"type\":\"string\",\"format\":\"\"},\"firstName\":{\"type\":\"string\",\"format\":\"\"},\"lastName\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"userid\",\"userName\",\"firstName\",\"lastName\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "patch",
+          "delete"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": true,
+        "apiFakerMappingFileLocation": {
+          "type": "object",
+          "properties": {
+            "userid": {
+              "type": "integer",
+              "faker": "random.number"
+            },
+            "userName": {
+              "type": "string",
+              "faker": "internet.email"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string",
+              "faker": "name.lastName"
+            }
+          },
+          "required": [
+            "userid",
+            "userName",
+            "firstName",
+            "lastName"
+          ]
+        },
+        "apiFakerMappingJsonType": "Data Schema",
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "queryParameters": {
+          "get": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            },
+            {
+              "name": "username",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "isArray": false,
+              "type": "string",
+              "format": ""
+            }
+          ],
+          "put": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "post": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "patch": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "delete": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ]
+        },
+        "uniqueParameter": "userid",
+        "fake_data": [
+          {
+            "userid": 86921,
+            "userName": "Laron47@hotmail.com",
+            "firstName": "in",
+            "lastName": "Armstrong"
+          },
+          {
+            "userid": 80684,
+            "userName": "Kade_Wehner79@hotmail.com",
+            "firstName": "tempor",
+            "lastName": "Watsica"
+          },
+          {
+            "userid": 80825,
+            "userName": "Adaline_Spencer81@yahoo.com",
+            "firstName": "ad amet",
+            "lastName": "Dickinson"
+          },
+          {
+            "userid": 94519,
+            "userName": "Elton90@yahoo.com",
+            "firstName": "veniam",
+            "lastName": "Morar"
+          },
+          {
+            "userid": 66773,
+            "userName": "Ivory_Feest@gmail.com",
+            "firstName": "non ad",
+            "lastName": "Morissette"
+          },
+          {
+            "userid": 58160,
+            "userName": "Bell55@hotmail.com",
+            "firstName": "labore veniam Duis aliquip",
+            "lastName": "Abshire"
+          },
+          {
+            "userid": 32656,
+            "userName": "Richie_Pacocha@yahoo.com",
+            "firstName": "veniam",
+            "lastName": "Klein"
+          },
+          {
+            "userid": 19839,
+            "userName": "Lilly_Nicolas14@hotmail.com",
+            "firstName": "minim in adipisicing est",
+            "lastName": "Stoltenberg"
+          },
+          {
+            "userid": 1391,
+            "userName": "Domenick.Jacobson@hotmail.com",
+            "firstName": "nostrud ad enim ut",
+            "lastName": "Wisoky"
+          },
+          {
+            "userid": 689,
+            "userName": "Noel71@gmail.com",
+            "firstName": "eiusmod",
+            "lastName": "Mueller"
+          },
+          {
+            "userid": 83960,
+            "userName": "Albertha.Yundt@hotmail.com",
+            "firstName": "voluptate",
+            "lastName": "King"
+          },
+          {
+            "userid": 89439,
+            "userName": "Don67@yahoo.com",
+            "firstName": "est Duis irure reprehenderit",
+            "lastName": "Trantow"
+          },
+          {
+            "userid": 74830,
+            "userName": "Giuseppe.Aufderhar66@gmail.com",
+            "firstName": "ipsum voluptate et",
+            "lastName": "Purdy"
+          },
+          {
+            "userid": 85705,
+            "userName": "Valentin_Treutel1@hotmail.com",
+            "firstName": "elit",
+            "lastName": "Schmidt"
+          },
+          {
+            "userid": 4579,
+            "userName": "Tamia_Boehm@gmail.com",
+            "firstName": "id",
+            "lastName": "Rowe"
+          },
+          {
+            "userid": 14544,
+            "userName": "Everardo27@gmail.com",
+            "firstName": "ad",
+            "lastName": "Hirthe"
+          },
+          {
+            "userid": 15791,
+            "userName": "Isobel99@yahoo.com",
+            "firstName": "sunt aute in eiusmod",
+            "lastName": "Hammes"
+          },
+          {
+            "userid": 73128,
+            "userName": "Pattie.Borer26@hotmail.com",
+            "firstName": "proident nulla",
+            "lastName": "Schulist"
+          },
+          {
+            "userid": 24339,
+            "userName": "Rebekah56@yahoo.com",
+            "firstName": "amet aliqua laboris s",
+            "lastName": "Yost"
+          },
+          {
+            "userid": 28018,
+            "userName": "Burdette_Bruen9@yahoo.com",
+            "firstName": "minim commodo qui",
+            "lastName": "Franecki"
+          }
+        ],
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "userid": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "userName": {
+              "type": "string",
+              "format": ""
+            },
+            "firstName": {
+              "type": "string",
+              "format": ""
+            },
+            "lastName": {
+              "type": "string",
+              "format": ""
+            }
+          },
+          "required": [
+            "userid",
+            "userName",
+            "firstName",
+            "lastName"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"type":"object","properties":{"userid":{"type":"integer","format":"int32"},"userName":{"type":"string","format":""},"firstName":{"type":"string","format":""},"lastName":{"type":"string","format":""}},"required":["userid","userName","firstName","lastName"]}
